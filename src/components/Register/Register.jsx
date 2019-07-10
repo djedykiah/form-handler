@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react'; 
+import FormLegend from '../FormLegend';
 
-export default function Register() {
+const Register = () => {
 	return (
 		<div>
-			Register
+			<FormLegend value={'Регистрация'}/>
 		</div>
 	)
-}
+} 
+
+export default Register;

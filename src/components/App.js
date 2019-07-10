@@ -1,12 +1,12 @@
 import React from 'react';
-import Login from './Login';
-import Register from './Register';
+import FormWrapper from './FormWrapper';
 
-export default function App() {
+const App = () => {
 	return (
-		<div>
-			<Login />
-			<Register />
+		<div className="wrapper">
+			<FormWrapper />
 		</div>
 	)
-}
+};
+
+export default App;

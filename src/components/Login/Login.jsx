@@ -1,9 +1,13 @@
 import React from 'react';
+import FormLegend from '../FormLegend';
 
-export default function Login() {
+
+const Login = () => {
 	return (
 		<div>
-			Login
+			<FormLegend  value={'Вход в систему'}/>
 		</div>
 	)
-}
+} 
+
+export default Login;
