@@ -5,7 +5,7 @@ import Register from './Register';
 
 const FormWrapper = () => {
 	return (
-		<div class="form-container"> 
+		<div className="form-container"> 
 			<Login /> 
 			<Register />
 		</div>
