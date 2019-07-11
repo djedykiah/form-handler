@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class FormInput extends Component {
+const propTypes = {
+  label: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
+
+class FormInput extends Component {
   state = {
     error: false,
     value: '',
@@ -19,10 +26,14 @@ export default class FormInput extends Component {
     const errorField = error ? (<span className="error-msg">{errorMessage}</span>) : null;
     return (
       <div className="input-group">
-        <label htmlFor="">{label}</label>
-        <input type={type} className={`input ${isError}`} value={value} onChange={this.onChange} />
+        <label htmlFor={label}>{label}</label>
+        <input id={label} type={type} className={`input ${isError}`} value={value} onChange={this.onChange} />
         {errorField}
       </div>
     );
   }
 }
+
+FormInput.propTypes = propTypes;
+
+export default FormInput;
