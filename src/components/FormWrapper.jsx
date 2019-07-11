@@ -3,13 +3,11 @@ import Login from './Login';
 import Register from './Register';
 
 
-const FormWrapper = () => {
-	return (
-		<div class="form-container"> 
-			<Login /> 
-			<Register />
-		</div>
-	)
-}
+const FormWrapper = () => (
+  <div className="form-container">
+    <Login />
+    <Register />
+  </div>
+);
 
 export default FormWrapper;

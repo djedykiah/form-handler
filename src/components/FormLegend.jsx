@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const FormLegend = ({ value }) => {
-	return (
-		<h2>
-			{value}
-		</h2>
-	)
-}
+  return (
+    <h2>
+      { value }
+    </h2>
+  );
+};
 
-export default FormLegend
+export default FormLegend;
