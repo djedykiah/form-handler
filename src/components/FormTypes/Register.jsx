@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FormLegend from '../FormLegend';
 import FormInput from '../FormInput';
 import FormWrapper from '../FormWrapper';
 
 const Register = () => (
-  <FormWrapper render={() => (
+  <FormWrapper>
     <form>
-      <FormLegend value="Регистрация" />
+      <legend>Регистрация</legend>
       <FormInput
         label="email"
         name="email"
@@ -30,8 +29,7 @@ const Register = () => (
       <hr />
       <Link className="btn link" to="/login">Войти</Link>
     </form>
-  )}
-  />
+  </FormWrapper>
 );
 
 export default Register;

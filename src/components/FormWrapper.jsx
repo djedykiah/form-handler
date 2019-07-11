@@ -1,9 +1,11 @@
 import React from 'react';
 
 
-const FormWrapper = component => (
+const FormWrapper = (props) => (
   <div className="form-container">
-    {component.render()}
+    {
+      props.children
+    }
   </div>
 );
 

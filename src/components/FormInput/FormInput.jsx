@@ -2,32 +2,36 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  label: PropTypes.string.isRequired,
-  errorMessage: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 class FormInput extends Component {
   state = {
     error: false,
-    value: '',
   };
 
-  onChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
+  componentDidMount() {
+    console.log('did', this.props.onChange);
+  }
 
   render() {
-    const { label, errorMessage, type } = this.props;
-    const { error, value } = this.state;
-    const isError = error ? 'error' : '';
-    const errorField = error ? (<span className="error-msg">{errorMessage}</span>) : null;
+    const {
+      name,
+      type,
+      onChange,
+      value,
+      error,
+    } = this.props;
+    const isError = this.state.error ? 'error' : '';
+    const errorField = this.state.error ? (<span className="error-msg">{error}</span>) : null;
     return (
       <div className="input-group">
-        <label htmlFor={label}>{label}</label>
-        <input id={label} type={type} className={`input ${isError}`} value={value} onChange={this.onChange} />
+        <span className="label">{name}</span>
+        <input id={name} type={type} className={`input ${isError}`} value={value} onChange={onChange} />
         {errorField}
       </div>
     );
