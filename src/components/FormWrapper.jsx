@@ -1,13 +1,15 @@
 import React from 'react';
-import Login from './Login';
-import Register from './Register';
 
 
-const FormWrapper = () => (
-  <div className="form-container">
-    <Login />
-    <Register />
-  </div>
-);
+class FormWrapper extends React.Component {
+  render() {
+    return (
+      <div className="form-container">
+        {this.props.render()}
+      </div>
+    )
+  }
+};
 
 export default FormWrapper;
+
