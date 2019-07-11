@@ -4,7 +4,7 @@ import FormLegend from '../FormLegend';
 import FormInput from '../FormInput';
 
 const Login = () => (
-  <div>
+  <form>
     <FormLegend value="Вход в систему" />
     <FormInput
       label="name"
@@ -18,7 +18,10 @@ const Login = () => (
       errorMessage="invalid password"
       type="password"
     />
-  </div>
+    <button className="btn" type="submit">Войти</button>
+    <hr />
+    <button className="btn link" type="submit">Зарегистрироваться</button>
+  </form>
 );
 
 
