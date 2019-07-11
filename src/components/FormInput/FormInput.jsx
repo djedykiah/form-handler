@@ -3,17 +3,24 @@ import React, { Component } from 'react';
 export default class FormInput extends Component {
   state = {
     error: false,
+    value: '',
+  };
+
+  onChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
   };
 
   render() {
-    const { label, errorMessage, value, onChange } = this.props;
-    const { error } = this.state;
+    const { label, errorMessage, type } = this.props;
+    const { error, value } = this.state;
     const isError = error ? 'error' : '';
     const errorField = error ? (<span className="error-msg">{errorMessage}</span>) : null;
     return (
       <div className="input-group">
         <label htmlFor="">{label}</label>
-        <input  type="text" className={`input ${isError}`} value={value} onChange={onChange} />
+        <input type={type} className={`input ${isError}`} value={value} onChange={this.onChange} />
         {errorField}
       </div>
     );
