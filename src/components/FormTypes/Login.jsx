@@ -26,6 +26,13 @@ class Login extends Component {
     });
   };
 
+  _handleChangePassword = (event) => {
+    const { value } = event.target;
+    this.setState({
+      password: value,
+    });
+  };
+
   render() {
     const { name, password, errors } = this.state;
     return (
@@ -44,7 +51,7 @@ class Login extends Component {
             value={password}
             error={errors.password}
             type="password"
-            onChange={this.handleChange}
+            onChange={this._handleChangePassword}
           />
           <button className="btn" type="submit">Войти</button>
           <hr />

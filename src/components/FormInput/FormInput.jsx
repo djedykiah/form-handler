@@ -14,10 +14,6 @@ class FormInput extends Component {
     error: false,
   };
 
-  componentDidMount() {
-    console.log('did', this.props.onChange);
-  }
-
   render() {
     const {
       name,
