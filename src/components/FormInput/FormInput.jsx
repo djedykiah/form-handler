@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { race } from 'q';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -9,30 +10,29 @@ const propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-class FormInput extends Component {
-  state = {
-    error: false,
-  };
 
-  render() {
-    const {
-      name,
-      type,
-      onChange,
-      value,
-      error,
-    } = this.props;
-    const isError = this.state.error ? 'error' : '';
-    const errorField = this.state.error ? (<span className="error-msg">{error}</span>) : null;
-    return (
+
+
+const FormInput = ({ name, type, onChange, value, error }) => {
+  const isError = error ? 'error' : '';
+  const errorField = error ? (<span className="error-msg">{error}</span>) : null;
+  return (
+    <div>
+
+
+
       <div className="input-group">
         <span className="label">{name}</span>
         <input id={name} type={type} className={`input ${isError}`} value={value} onChange={onChange} />
         {errorField}
       </div>
-    );
-  }
+
+  
+    </div>
+  )
 }
+
+
 
 FormInput.propTypes = propTypes;
 
